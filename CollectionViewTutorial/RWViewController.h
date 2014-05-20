@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RWPhotoAlbumLayout.h"
 
-@interface RWViewController : UIViewController
+@interface RWViewController : UIViewController <UICollectionViewDataSource,
+UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollection;
 @property (weak, nonatomic) IBOutlet RWPhotoAlbumLayout *photoAlbumLayout;
 

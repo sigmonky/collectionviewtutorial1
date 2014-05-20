@@ -16,15 +16,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="52B-U2-GsR">
-                                <rect key="frame" x="0.0" y="79" width="320" height="350"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="52B-U2-GsR">
+                                <rect key="frame" x="0.0" y="57" width="320" height="365"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <collectionViewLayout key="collectionViewLayout" id="AMW-S1-OJe" customClass="RWPhotoAlbumLayout"/>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="YJA-fc-w9T"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="mIY-Lg-bt6"/>
+                                </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-9X-Uv4">
+                                <rect key="frame" x="15" y="440" width="291" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="C"/>
+                                    <segment title="D"/>
+                                    <segment title="E"/>
+                                    <segment title="F"/>
+                                    <segment title="G"/>
+                                    <segment title="A"/>
+                                    <segment title="B"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How High The Moon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-19-s7g">
+                                <rect key="frame" x="95" y="28" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NHM-of-t2Y">
+                                <rect key="frame" x="15" y="484" width="83" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="HBP-B2-Ej6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="#"/>
+                                    <segment title="b"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-20-gro">
+                                <rect key="frame" x="15" y="527" width="166" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="zuB-tr-Npb"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="M"/>
+                                    <segment title="m"/>
+                                    <segment title="aug"/>
+                                    <segment title="dim"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZKJ-N2-8y5">
+                                <rect key="frame" x="106" y="484" width="200" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="6"/>
+                                    <segment title="7"/>
+                                    <segment title="9"/>
+                                    <segment title="11"/>
+                                    <segment title="13"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NUb-9X-Uv4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="57N-rk-E6M"/>
+                            <constraint firstItem="NHM-of-t2Y" firstAttribute="leading" secondItem="gkW-20-gro" secondAttribute="leading" id="6ef-Ra-hdt"/>
+                            <constraint firstItem="M7b-19-s7g" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="DYk-o8-n1f"/>
+                            <constraint firstItem="ZKJ-N2-8y5" firstAttribute="top" secondItem="NHM-of-t2Y" secondAttribute="top" id="FtU-zt-uA0"/>
+                            <constraint firstItem="gkW-20-gro" firstAttribute="top" secondItem="NHM-of-t2Y" secondAttribute="bottom" constant="15" id="GAe-cc-G3D"/>
+                            <constraint firstItem="ZKJ-N2-8y5" firstAttribute="trailing" secondItem="NUb-9X-Uv4" secondAttribute="trailing" id="MJ3-oV-G2M"/>
+                            <constraint firstItem="NUb-9X-Uv4" firstAttribute="centerX" secondItem="52B-U2-GsR" secondAttribute="centerX" id="abN-wc-p3q"/>
+                            <constraint firstItem="NUb-9X-Uv4" firstAttribute="top" secondItem="52B-U2-GsR" secondAttribute="bottom" constant="18" id="ccT-RV-wKd"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gkW-20-gro" secondAttribute="bottom" constant="13" id="d6z-wa-1Gm"/>
+                            <constraint firstAttribute="centerX" secondItem="52B-U2-GsR" secondAttribute="centerX" id="dQy-iE-e5D"/>
+                            <constraint firstItem="NHM-of-t2Y" firstAttribute="leading" secondItem="NUb-9X-Uv4" secondAttribute="leading" id="foH-aj-Deh"/>
+                            <constraint firstItem="ZKJ-N2-8y5" firstAttribute="leading" secondItem="NHM-of-t2Y" secondAttribute="trailing" constant="8" symbolic="YES" id="m5M-2R-lJw"/>
+                            <constraint firstItem="52B-U2-GsR" firstAttribute="top" secondItem="M7b-19-s7g" secondAttribute="bottom" constant="8" symbolic="YES" id="r5M-1r-SSq"/>
+                            <constraint firstAttribute="centerX" secondItem="M7b-19-s7g" secondAttribute="centerX" constant="-14" id="tRq-mz-GIa"/>
+                            <constraint firstItem="NHM-of-t2Y" firstAttribute="top" secondItem="NUb-9X-Uv4" secondAttribute="bottom" constant="16" id="vid-Fl-fEE"/>
+                            <constraint firstItem="ZKJ-N2-8y5" firstAttribute="baseline" secondItem="NHM-of-t2Y" secondAttribute="baseline" id="xSj-nn-l1W"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myCollection" destination="52B-U2-GsR" id="Znc-2e-xhO"/>
